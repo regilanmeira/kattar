@@ -96,8 +96,15 @@ CREATE TABLE coleta
     foto_residuo text not null   
 );
 
-
-
 ALTER TABLE coleta
 ADD COLUMN email_usuario varchar(255) NOT NULL,
 ADD CONSTRAINT fk_email_usuario FOREIGN KEY (email_usuario) REFERENCES usuario(email);
+
+/*
+
+--- RELAÇÃO MxM ---
+
+relação para os materiais
+relação para os associados, coleta e historico de coleta
+
+*/
