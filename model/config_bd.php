@@ -1,9 +1,9 @@
 <?php
 
-$servidor = "";
-$usuario = "";
+$servidor = "localhost";
+$usuario = "root";
 $senha = "";
-$bd = "";
+$bd = "kattar";
 
 // Criando nova conexão 
 global $conn;

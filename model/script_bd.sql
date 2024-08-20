@@ -14,21 +14,7 @@ CREATE TABLE usuario
     logradouro varchar(80) not null
 );
 
-CREATE TABLE coleta 
-(
-   	id int PRIMARY KEY AUTO_INCREMENT,
-    data_coleta date not null,
-    turno_coleta varchar(60) not null,
-    estado varchar(60) not null,
-    municipio varchar(60) not null,
-    bairro varchar(60) not null,
-    logradouro varchar(80) not null,
-    descricao text not null,
-    foto_residuo text not null,
-    id_tipo_material int REFERENCES tipo_material(id),
-    email_usuario varchar(200) REFERENCES usuario(email),
-    id_status int REFERENCES status_coleta(id);
-);
+
 
 CREATE TABLE cooperativa
 (
@@ -61,6 +47,23 @@ CREATE TABLE status_coleta
 (
 	id int PRIMARY KEY AUTO_INCREMENT,
     descricao text not null
+);
+
+
+CREATE TABLE coleta 
+(
+   	id int PRIMARY KEY AUTO_INCREMENT,
+    data_coleta date not null,
+    turno_coleta varchar(60) not null,
+    estado varchar(60) not null,
+    municipio varchar(60) not null,
+    bairro varchar(60) not null,
+    logradouro varchar(80) not null,
+    descricao text not null,
+    foto_residuo text not null,
+    id_tipo_material int REFERENCES tipo_material(id),
+    email_usuario varchar(200) REFERENCES usuario(email),
+    id_status int REFERENCES status_coleta(id)
 );
 
 CREATE TABLE historico_coleta
