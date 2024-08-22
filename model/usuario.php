@@ -1,7 +1,8 @@
 <?php
 include "config_bd.php";
 
-class Usuario {
+class Usuario
+{
 
     // ATRIBUTOS DA CLASSE 
     private $email;
@@ -17,7 +18,7 @@ class Usuario {
 
     /**
      * Get the value of email
-     */ 
+     */
     public function getEmail()
     {
         return $this->email;
@@ -27,7 +28,7 @@ class Usuario {
      * Set the value of email
      *
      * @return  self
-     */ 
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -37,7 +38,7 @@ class Usuario {
 
     /**
      * Get the value of nome
-     */ 
+     */
     public function getNome()
     {
         return $this->nome;
@@ -47,7 +48,7 @@ class Usuario {
      * Set the value of nome
      *
      * @return  self
-     */ 
+     */
     public function setNome($nome)
     {
         $this->nome = $nome;
@@ -57,7 +58,7 @@ class Usuario {
 
     /**
      * Get the value of senha
-     */ 
+     */
     public function getSenha()
     {
         return $this->senha;
@@ -67,7 +68,7 @@ class Usuario {
      * Set the value of senha
      *
      * @return  self
-     */ 
+     */
     public function setSenha($senha)
     {
         $this->senha = $senha;
@@ -77,7 +78,7 @@ class Usuario {
 
     /**
      * Get the value of telefone
-     */ 
+     */
     public function getTelefone()
     {
         return $this->telefone;
@@ -87,7 +88,7 @@ class Usuario {
      * Set the value of telefone
      *
      * @return  self
-     */ 
+     */
     public function setTelefone($telefone)
     {
         $this->telefone = $telefone;
@@ -97,7 +98,7 @@ class Usuario {
 
     /**
      * Get the value of estado
-     */ 
+     */
     public function getEstado()
     {
         return $this->estado;
@@ -107,7 +108,7 @@ class Usuario {
      * Set the value of estado
      *
      * @return  self
-     */ 
+     */
     public function setEstado($estado)
     {
         $this->estado = $estado;
@@ -117,7 +118,7 @@ class Usuario {
 
     /**
      * Get the value of municipio
-     */ 
+     */
     public function getMunicipio()
     {
         return $this->municipio;
@@ -127,7 +128,7 @@ class Usuario {
      * Set the value of municipio
      *
      * @return  self
-     */ 
+     */
     public function setMunicipio($municipio)
     {
         $this->municipio = $municipio;
@@ -137,7 +138,7 @@ class Usuario {
 
     /**
      * Get the value of bairro
-     */ 
+     */
     public function getBairro()
     {
         return $this->bairro;
@@ -147,7 +148,7 @@ class Usuario {
      * Set the value of bairro
      *
      * @return  self
-     */ 
+     */
     public function setBairro($bairro)
     {
         $this->bairro = $bairro;
@@ -157,7 +158,7 @@ class Usuario {
 
     /**
      * Get the value of logradouro
-     */ 
+     */
     public function getLogradouro()
     {
         return $this->logradouro;
@@ -167,7 +168,7 @@ class Usuario {
      * Set the value of logradouro
      *
      * @return  self
-     */ 
+     */
     public function setLogradouro($logradouro)
     {
         $this->logradouro = $logradouro;
@@ -208,5 +209,4 @@ class Usuario {
     public function modificarSenha() {}
 
     public function fazerLogin() {}
-
 }
