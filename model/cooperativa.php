@@ -17,7 +17,7 @@ class cooperativa
     private $bairro;
     private $logradouro;
 
-    //MÉTODOS GETS e SETs
+    // MÉTODOS GETS e SETS
 
     /**
      * Get the value of cnpj

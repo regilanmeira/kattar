@@ -16,7 +16,7 @@ class Usuario
     private $bairro;
     private $logradouro;
 
-    //MÉTODOS GETS e SETs
+    // MÉTODOS GETS e SETS
 
     /**
      * Get the value of email
@@ -211,5 +211,5 @@ class Usuario
     public function modificarSenha() {}
 
     public function fazerLogin() {}
-    
+
 }
