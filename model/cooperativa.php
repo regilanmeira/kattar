@@ -2,13 +2,14 @@
 
 include "config_bd.php";
 
-class Usuario
+class cooperativa
 {
 
     // ATRIBUTOS DA CLASSE 
 
-    private $email;
+    private $cnpj;
     private $nome;
+    private $email;
     private $senha;
     private $telefone;
     private $estado;
@@ -19,21 +20,21 @@ class Usuario
     //MÉTODOS GETS e SETs
 
     /**
-     * Get the value of email
+     * Get the value of cnpj
      */
-    public function getEmail()
+    public function getCnpj()
     {
-        return $this->email;
+        return $this->cnpj;
     }
 
     /**
-     * Set the value of email
+     * Set the value of cnpj
      *
      * @return  self
      */
-    public function setEmail($email)
+    public function setCnpj($cnpj)
     {
-        $this->email = $email;
+        $this->cnpj = $cnpj;
 
         return $this;
     }
@@ -54,6 +55,26 @@ class Usuario
     public function setNome($nome)
     {
         $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set the value of email
+     *
+     * @return  self
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
 
         return $this;
     }
@@ -180,10 +201,11 @@ class Usuario
 
     // MÉTODO CONSTRUTOR
 
-    function __construct($email, $nome, $senha, $telefone, $estado, $municipio, $bairro, $logradouro)
+    function __construct($cnpj, $nome, $email, $senha, $telefone, $estado, $municipio, $bairro, $logradouro)
     {
-        $this->email = $email;
+        $this->cnpj = $cnpj;
         $this->nome = $nome;
+        $this->email = $email;
         $this->senha = $senha;
         $this->telefone = $telefone;
         $this->estado = $estado;
@@ -194,22 +216,4 @@ class Usuario
 
     // MÉTODOS DA CLASSE
 
-    public function criarUsuario()
-    {
-        $sql = "INSERT INTO usuario(email,nome,senha,telefone,estado,municipio,bairro,logradouro) ";
-        $sql .= " VALUES ('$this->email','$this->nome','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
-
-
-
-        if (executarComando($sql)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function modificarSenha() {}
-
-    public function fazerLogin() {}
-    
 }
