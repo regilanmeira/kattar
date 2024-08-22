@@ -1,21 +1,21 @@
 <?php
 include "config_bd.php";
 
-class Usuario{
+class Usuario {
 
     // ATRIBUTOS DA CLASSE 
-    private $email; 
-    private $nome; 
-    private $senha; 
-    private $telefone; 
-    private $estado; 
-    private $municipio; 
-    private $bairro; 
+    private $email;
+    private $nome;
+    private $senha;
+    private $telefone;
+    private $estado;
+    private $municipio;
+    private $bairro;
     private $logradouro;
 
     //MÉTODOS GETS e SETs
 
-        /**
+    /**
      * Get the value of email
      */ 
     public function getEmail()
@@ -34,8 +34,6 @@ class Usuario{
 
         return $this;
     }
-
-    
 
     /**
      * Get the value of nome
@@ -57,8 +55,6 @@ class Usuario{
         return $this;
     }
 
-    
-
     /**
      * Get the value of senha
      */ 
@@ -78,9 +74,6 @@ class Usuario{
 
         return $this;
     }
-
-
-    
 
     /**
      * Get the value of telefone
@@ -182,21 +175,19 @@ class Usuario{
         return $this;
     }
 
-
     // MÉTODO CONSTRUTOR
 
-    function __construct($email,$nome,$senha,$telefone,$estado,$municipio,$bairro,$logradouro)
+    function __construct($email, $nome, $senha, $telefone, $estado, $municipio, $bairro, $logradouro)
     {
-        $this->email = $email; 
-        $this->nome = $nome; 
-        $this->senha = $senha; 
-        $this->telefone = $telefone; 
-        $this->estado = $estado; 
-        $this->municipio = $municipio; 
-        $this->bairro = $bairro; 
+        $this->email = $email;
+        $this->nome = $nome;
+        $this->senha = $senha;
+        $this->telefone = $telefone;
+        $this->estado = $estado;
+        $this->municipio = $municipio;
+        $this->bairro = $bairro;
         $this->logradouro = $logradouro;
     }
-
 
     // MÉTODOS DA CLASSE
 
@@ -207,28 +198,15 @@ class Usuario{
 
 
 
-        if (executarComando($sql)){
+        if (executarComando($sql)) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
-    public function modificarSenha()
-    {
+    public function modificarSenha() {}
 
-    }
-
-    public function fazerLogin()
-    {
-
-    }
-
-
+    public function fazerLogin() {}
 
 }
-
-
-
