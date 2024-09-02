@@ -83,5 +83,5 @@ class tipo_material
     }
 
     // MÉTODOS DA CLASSE
-    
+
 }

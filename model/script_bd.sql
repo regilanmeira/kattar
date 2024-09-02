@@ -2,7 +2,7 @@ CREATE DATABASE kattar;
 
 USE kattar; 
 
-CREATE TABLE usuario 
+CREATE TABLE usuario
 (
     email varchar(255) PRIMARY KEY,
     nome varchar(200) not null,

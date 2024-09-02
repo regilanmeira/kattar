@@ -9,7 +9,6 @@ class tipo_material
 
     private $id;
     private $descricao;
-    private $observacao;
 
     // MÉTODOS GETS E SETS
 
@@ -53,35 +52,14 @@ class tipo_material
         return $this;
     }
 
-    /**
-     * Get the value of observacao
-     */
-    public function getObservacao()
-    {
-        return $this->observacao;
-    }
-
-    /**
-     * Set the value of observacao
-     *
-     * @return  self
-     */
-    public function setObservacao($observacao)
-    {
-        $this->observacao = $observacao;
-
-        return $this;
-    }
-
     // MÉTODO CONSTRUTOR
 
-    public function __construct($id,  $descricao,  $observacao)
+    public function __construct($id,  $descricao)
     {
         $this->id = $id;
         $this->descricao = $descricao;
-        $this->observacao = $observacao;
     }
 
     // MÉTODOS DA CLASSE
-    
+
 }
