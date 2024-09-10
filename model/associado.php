@@ -2,7 +2,7 @@
 
 include "config_bd.php";
 
-class associado
+class Associado
 {
     
     // ATRIBUTOS DA CLASSE

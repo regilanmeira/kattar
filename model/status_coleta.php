@@ -2,7 +2,7 @@
 
 include "conexao_bd.php";
 
-class tipo_material
+class Status
 {
 
     // ATRIBUTOS DA CLASSE

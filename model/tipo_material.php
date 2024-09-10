@@ -1,8 +1,8 @@
 <?php
 
-include "conexao_bd.php";
+include "config_bd.php";
 
-class tipo_material
+class TipoMaterial
 {
 
     // ATRIBUTOS DA CLASSE
@@ -75,13 +75,57 @@ class tipo_material
 
     // MÉTODO CONSTRUTOR
 
-    public function __construct($id,  $descricao,  $observacao)
+    public function __construct($descricao = "",  $observacao = "")
     {
-        $this->id = $id;
+       
         $this->descricao = $descricao;
         $this->observacao = $observacao;
     }
 
     // MÉTODOS DA CLASSE
+
+    public function criarTipoMaterial(){
+        $sql = "INSERT INTO tipo_material(descricao,observacao) VALUES ('$this->descricao','$this->observacao')";
+
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function atualizarTipoMaterial()
+    {
+        $sql = "UPDATE tipo_material SET descricao = '$this->descricao', observacao = '$this->observacao'";
+        $sql .= " WHERE id = '$this->id'";
+
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function removerTipoMaterial()
+    {
+        $sql = "DELETE FROM tipo_material";
+        $sql .= " WHERE id = '$this->id'";
+
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function exibirTipoMaterial()
+    {
+        $sql = "SELECT * FROM tipo_material ORDER BY descricao";
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
     
 }
+    

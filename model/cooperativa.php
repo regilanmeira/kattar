@@ -2,7 +2,7 @@
 
 include "config_bd.php";
 
-class cooperativa
+class Cooperativa
 {
 
     // ATRIBUTOS DA CLASSE 
