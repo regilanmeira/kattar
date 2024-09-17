@@ -286,7 +286,7 @@ class Coleta
     {
         $sql = "INSERT INTO coleta(id,data_coleta,turno_coleta,estado,municipio,bairro,logradouro,descricao,foto_residuo,id_tipo_material,email_usuario,id_status) ";
         $sql .= " VALUES ('$this->id','$this->data_coleta','$this->turno_coleta','$this->estado','$this->municipio','$this->bairro','$this->logradouro','$this->id_tipo_material','$this->descricao',$this->foto_residuo,$this->email_usuario,$this->id_status)";
-        
+
         if (executarComando($sql)) {
             return true;
         } else {
@@ -297,4 +297,5 @@ class Coleta
     public function modificarSenha() {}
 
     public function fazerLogin() {}
+    
 }
