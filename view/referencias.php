@@ -6,6 +6,9 @@
 <!-- Inclusão do script para localização -->
 <script src="localizacao.js"></script>
 
+<!-- Arquivo para incluir as mascaras de formatação -->
+<script src="mascaras.js"></script>
+
 <!-- Referências do bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <script src="js/bootstrap.bundle.min.js"></script>
