@@ -1,10 +1,8 @@
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 
 //Incluir o arquivo da classe cooperativa
 require "../model/cooperativa.php";
-
 
 include "referencias.php";
 
@@ -20,20 +18,12 @@ $municipio = $_POST["txtMunicipio"];
 $bairro = $_POST["txtBairro"];
 $logradouro = $_POST["txtLogradouro"];
 
+$coop = new Cooperativa($cnpj, $nome, $email, $senha, $telefone, $estado, $municipio, $bairro, $logradouro);
 
-$coop = new Cooperativa($cnpj,$nome,$email,$senha,$telefone,$estado,$municipio,$bairro,$logradouro);
-
-
-if ($coop->criarCooperativa())
-{
+if ($coop->criarCooperativa()) {
     echo "<h1 class='alert alert-success'>Cooperativa adicionada com sucesso!</h1>";
-}
-else
-{
+} else {
     echo "<h1 class='alert alert-danger'>Não foi possível adicionar a cooperativa. Verifique os dados informados. </h1> ";
 }
-
-
-
 
 ?>

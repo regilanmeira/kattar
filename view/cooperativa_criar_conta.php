@@ -13,7 +13,6 @@
 
             <?php require "cabecalho_pagina.php" ?>
 
-
             <div class="col-md-6">
                 <input type="text" class="form-control" required name="txtNome" placeholder="Informe o nome da cooperativa" />
             </div>
@@ -48,14 +47,14 @@
             <div class="col-md-12" style="text-align: left;">
 
 
-                <input type="submit" formaction="../controller/cooperativa_criar_conta_salvar.php" class="btn btn-success" value="Enviar">
+                <input type="submit" formaction="../controller/cooperativa_criar_conta_salvar.php" class="btn btn-success" value="Criar">
             </div>
         </div>
         <div class="row">
             <div class="col-md-12" style="text-align: left;">
 
                 <a href="index.php">
-                <input  type="button" class="btn btn-danger" value="Voltar">
+                <input  type="button" class="btn btn-danger" value="Cancelar">
                 </a>
             </div>
         </div>
