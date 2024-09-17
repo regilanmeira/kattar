@@ -199,8 +199,6 @@ class Usuario
         $sql = "INSERT INTO usuario(email,nome,senha,telefone,estado,municipio,bairro,logradouro) ";
         $sql .= " VALUES ('$this->email','$this->nome','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
 
-
-
         if (executarComando($sql)) {
             return true;
         } else {
@@ -211,5 +209,4 @@ class Usuario
     public function modificarSenha() {}
 
     public function fazerLogin() {}
-
 }
