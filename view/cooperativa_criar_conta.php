@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-12" style="text-align: left;">
 
-                <a href="index.php">
+                <a href="conta_criar.php">
                 <input  type="button" class="btn btn-danger" value="Cancelar">
                 </a>
             </div>
