@@ -61,5 +61,46 @@ class Status
     }
 
     // MÉTODOS DA CLASSE
+    public function criarStatus(){
+        $sql = "INSERT INTO status_coleta(descricao) VALUES ('$this->descricao')";
 
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function atualizarStatus()
+    {
+        $sql = "UPDATE status_coleta SET descricao = '$this->descricao'";
+        $sql .= " WHERE id = '$this->id'";
+
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function removerStatus()
+    {
+        $sql = "DELETE FROM status_coleta";
+        $sql .= " WHERE id = '$this->id'";
+
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function exibirStatus()
+    {
+        $sql = "SELECT * FROM status_coleta ORDER BY descricao";
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
 }

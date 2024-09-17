@@ -84,4 +84,47 @@ class Associado
 
     // MÉTODOS DA CLASSE
 
+public function criarAssociado(){
+    $sql = "INSERT INTO associado(nome,cnpj_cooperativa) VALUES ('$this->nome','$this->cnpj_cooperativa')";
+
+    if (executarComando($sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+public function atualizarAssociado()
+{
+    $sql = "UPDATE associado SET nome = '$this->nome', cnpj_cooperativa = '$this->cnpj_cooperativa'";
+    $sql .= " WHERE id = '$this->id'";
+
+    if (executarComando($sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+public function removerAssociado()
+{
+    $sql = "DELETE FROM associado";
+    $sql .= " WHERE id = '$this->id'";
+
+    if (executarComando($sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+public function exibirAssociado()
+{
+    $sql = "SELECT * FROM associado ORDER BY nome";
+    $tabela = retornarDados($sql);
+
+    return $tabela;
+}
+
 }

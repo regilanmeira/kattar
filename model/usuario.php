@@ -199,6 +199,8 @@ class Usuario
         $sql = "INSERT INTO usuario(email,nome,senha,telefone,estado,municipio,bairro,logradouro) ";
         $sql .= " VALUES ('$this->email','$this->nome','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
 
+
+
         if (executarComando($sql)) {
             return true;
         } else {
@@ -209,4 +211,39 @@ class Usuario
     public function modificarSenha() {}
 
     public function fazerLogin() {}
+
+   
+    public function atualizarUsuario()
+{
+    $sql = "UPDATE usuario SET nome = '$this->nome', email = '$this->email', senha = '$this->senha', telefone = '$this->telefone', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro'";
+    $sql .= " WHERE id = '$this->id'";
+
+    if (executarComando($sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+public function removerUsuario()
+{
+    $sql = "DELETE FROM usuario";
+    $sql .= " WHERE email = '$this->email'";
+
+    if (executarComando($sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+public function exibirUsuario()
+{
+    $sql = "SELECT * FROM usuario ORDER BY nome";
+    $tabela = retornarDados($sql);
+
+    return $tabela;
+}
+
 }

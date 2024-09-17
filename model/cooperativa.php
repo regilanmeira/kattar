@@ -215,11 +215,8 @@ class Cooperativa
     }
 
     // MÉTODOS DA CLASSE
-
-    public function criarCooperativa()
-    {
-        $sql = "INSERT INTO cooperativa(cnpj,nome,senha,telefone,estado,municipio,bairro,logradouro) ";
-        $sql .= " VALUES ('$this->cnpj','$this->nome','$this->email','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
+    public function criarCooperativa(){
+        $sql = "INSERT INTO cooperativa(cnpj,nome,email,senha,telefone,estado,municipio,bairro,logradouro) VALUES ('$this->cnpj','$this->nome',' $this->email','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
 
         if (executarComando($sql)) {
             return true;
@@ -228,8 +225,36 @@ class Cooperativa
         }
     }
 
-    public function modificarSenha() {}
+    public function atualizarCooperativa()
+    {
+        $sql = "UPDATE cooperativa SET cnpj = '$this->cnpj', nome = '$this->nome', email = '$this->email', senha = '$this->senha', telefone = '$this->telefone', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro'";
+        $sql .= " WHERE id = '$this->id'";
 
-    public function fazerLogin() {}
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    public function removerCooperativa()
+    {
+        $sql = "DELETE FROM cooperativa";
+        $sql .= " WHERE id = '$this->cnpj'";
+
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function exibirCooperativa()
+    {
+        $sql = "SELECT * FROM cooperativa ORDER BY nome";
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
 }

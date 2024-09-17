@@ -281,21 +281,46 @@ class Coleta
     }
 
     // MÉTODOS DA CLASSE
-
-    public function criarColeta()
-    {
-        $sql = "INSERT INTO coleta(id,data_coleta,turno_coleta,estado,municipio,bairro,logradouro,descricao,foto_residuo,id_tipo_material,email_usuario,id_status) ";
-        $sql .= " VALUES ('$this->id','$this->data_coleta','$this->turno_coleta','$this->estado','$this->municipio','$this->bairro','$this->logradouro','$this->id_tipo_material','$this->descricao',$this->foto_residuo,$this->email_usuario,$this->id_status)";
-
+    public function criarColeta(){
+        $sql = "INSERT INTO coleta(data_coleta,turno_coleta,estado,municipio,bairro,logradouro,descricao,foto_residuo,id_tipo_material,email_usuario,id_status) VALUES ('$this->data_coleta','$this->turno_coleta','$this->estado','$this->municipio','$this->bairro','$this->logradouro','$this->descricao','$this->foto_residuo','$this->id_tipo_material','$this->email_usuario','$this->id_status')";
+    
         if (executarComando($sql)) {
             return true;
         } else {
             return false;
         }
     }
-
-    public function modificarSenha() {}
-
-    public function fazerLogin() {}
     
+    public function atualizarColeta()
+    {
+        $sql = "UPDATE coleta SET data_coleta = '$this->data_coleta', turno_coleta = '$this->turno_coleta', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro', descricao = '$this->descricao', foto_residuo = '$this->foto_residuo', id_tipo_material = '$this->id_tipo_material', email_usuario = '$this->email_usuario', id_status ='$this->id_status'";
+        $sql .= " WHERE id = '$this->id'";
+    
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public function removerColeta()
+    {
+        $sql = "DELETE FROM coleta";
+        $sql .= " WHERE id = '$this->id'";
+    
+        if (executarComando($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
+    public function exibirColeta()
+    {
+        $sql = "SELECT * FROM coleta ORDER BY nome";
+        $tabela = retornarDados($sql);
+    
+        return $tabela;
+    }
 }

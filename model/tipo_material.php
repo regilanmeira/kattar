@@ -77,15 +77,14 @@ class TipoMaterial
 
     public function __construct($descricao = "",  $observacao = "")
     {
-
+       
         $this->descricao = $descricao;
         $this->observacao = $observacao;
     }
 
     // MÉTODOS DA CLASSE
 
-    public function criarTipoMaterial()
-    {
+    public function criarTipoMaterial(){
         $sql = "INSERT INTO tipo_material(descricao,observacao) VALUES ('$this->descricao','$this->observacao')";
 
         if (executarComando($sql)) {
@@ -129,3 +128,4 @@ class TipoMaterial
     }
     
 }
+    
