@@ -3,94 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=" device-widt, initial-scale=1.0">
+
+    <?php
+
+    require "referencias.php" ?>
 </head>
 
 <body>
 
-    <?php
+    <div class="container">
+        <form method="post">
+            <div class="row">
+
+                <div class="col-sm-12">
 
 
-
-    /*
-
-     include "../model/usuario.php";
-    $usuario  = new Usuario("ricardo@abc.com.br", "Ricardo Santos", "123456", "7399999", "BA", "Itabuna", "Não definido", "Rua ABC");
-
-    if ($usuario->criarUsuario() == true) {
-        echo "Usuário criado";
-    } else {
-        echo "Não foi possivel criar o usuário";
-    }
-
-    
-*/
-
-    /*
-    include "../model/tipo_material.php";
-
-    $tipo_material = new TipoMaterial("Plástico","Plático de garrafa pet");
-
-    if ($tipo_material->criarTipoMaterial())
-    {
-        echo "<h1>Material criado</h1>";
-    }
-    else
-    {
-        echo "<h1>Não foi possível criar!</h1>";
-    }
-
-*/
-
-    /*
-    include "../model/tipo_material.php";
-
-    $tipo_material = new TipoMaterial();
-    $tipo_material->setId("2");
-
-    if ($tipo_material->removerTipoMaterial())
-    {
-        echo "<h1>Material removido</h1>";
-    }
-    else
-    {
-        echo "<h1>Não foi possível remover!</h1>";
-    }*/
-
-    /*
-    include "../model/tipo_material.php";
-
-    $tipo_material = new TipoMaterial();
-    $tipo_material->setId("1");
-    $tipo_material->setDescricao("Vidro");
-    $tipo_material->setObservacao("Vidro temperado");
-
-    if ($tipo_material->atualizarTipoMaterial())
-    {
-        echo "<h1>Material atualizado</h1>";
-    }
-    else
-    {
-        echo "<h1>Não foi possível atualizar!</h1>";
-    }
-
-    */
+                    <?php require "cabecalho_pagina.php" ?>
+                    <h1>Bem-vindo!</h1>
 
 
-    include "../model/tipo_material.php";
+                </div>
 
-    $tipo_material = new TipoMaterial();
+                <div class="col-sm-12">
+                    <input type="submit" class="btn btn-success" formaction="conta_entrar.php" value="Entrar">
+                    <input type="submit" class="btn btn-success" formaction="conta_criar.php" value="Criar conta">
+                </div>
 
-    $tabela = $tipo_material->exibirTipoMaterial();
-
-    while ($linha = mysqli_fetch_assoc($tabela)) {
-
-        echo $linha["descricao"] . "<br/>";
-    }
+            </div>
 
 
-    ?>
+        </form>
+    </div>
+
 
 </body>
 
