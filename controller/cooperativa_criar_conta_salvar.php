@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 
 //Incluir o arquivo da classe cooperativa
@@ -21,9 +20,9 @@ $logradouro = $_POST["txtLogradouro"];
 $coop = new Cooperativa($cnpj, $nome, $email, $senha, $telefone, $estado, $municipio, $bairro, $logradouro);
 
 if ($coop->criarCooperativa()) {
-    echo "<h1 class='alert alert-success'>Cooperativa adicionada com sucesso!</h1>";
+    echo "<h1 class='alert alert-success'>Cooperativa criada com sucesso!</h1>";
 } else {
-    echo "<h1 class='alert alert-danger'>Não foi possível adicionar a cooperativa. Verifique os dados informados. </h1> ";
+    echo "<h1 class='alert alert-danger'>Não foi possível criar a cooperativa. Verifique os dados informados. </h1> ";
 }
 
 ?>
