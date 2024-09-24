@@ -23,13 +23,29 @@
                 <input type="submit" class="btn btn-success" formaction="coleta_solicitar.php" value="Coleta" />
             </div>
             <div class="col-md-4">
-                <input type="submit" class="btn btn-success" formaction="coleta_historico.php" value="Exibir histórico" />
+                <input type="submit" class="btn btn-success" formaction="coleta_historico.php" value="Histórico da coleta" />
             </div>
+
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-success" formaction="coleta_mostrar_locacalizacao.php"  value="Pontos de coleta" name="btLocalizacao" id="btLocalizacao"/>
+            </div>
+
+                   
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-success" formaction="tipo_material_cadastrar.php"  value="Cadastrar tipo de material" name="btTipoMaterial" id="btTipoMaterial"/>
+            </div>
+
+
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-success" formaction="associado_cadastrar.php"  value="Cadastrar associado" name="btAssociado" id="btAssociado"/>
+            </div>
+
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-success" formaction="status_coleta_cadastrar.php"  value="Cadastrar status da coleta" name="btStatus" id="btStatus"/>
+            </div>
+
             <div class="col-md-4">
                 <input type="submit" class="btn btn-success" formaction="coleta_instrucoes.php" value="Instruções informativas" />
-            </div>
-            <div class="col-md-4">
-                <input type="submit" class="btn btn-success" formaction="coleta_mostrar_locacalizacao.php"  value="Exibir pontos de coleta" name="btLocalizacao" id="btLocalizacao"/>
             </div>
 
 

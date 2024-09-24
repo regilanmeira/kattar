@@ -227,8 +227,8 @@ class Cooperativa
 
     public function atualizarCooperativa()
     {
-        $sql = "UPDATE cooperativa SET cnpj = '$this->cnpj', nome = '$this->nome', email = '$this->email', senha = '$this->senha', telefone = '$this->telefone', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro'";
-        $sql .= " WHERE id = '$this->id'";
+        $sql = "UPDATE cooperativa SET nome = '$this->nome', email = '$this->email', senha = '$this->senha', telefone = '$this->telefone', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro'";
+        $sql .= " WHERE id = '$this->cnpj'";
 
         if (executarComando($sql)) {
             return true;

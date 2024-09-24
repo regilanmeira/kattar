@@ -213,8 +213,8 @@ class Usuario
 
     public function atualizarUsuario()
 {
-    $sql = "UPDATE usuario SET nome = '$this->nome', email = '$this->email', senha = '$this->senha', telefone = '$this->telefone', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro'";
-    $sql .= " WHERE id = '$this->id'";
+    $sql = "UPDATE usuario SET nome = '$this->nome', senha = '$this->senha', telefone = '$this->telefone', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro'";
+    $sql .= " WHERE id = '$this->email'";
 
     if (executarComando($sql)) {
         return true;
