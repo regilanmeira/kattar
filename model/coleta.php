@@ -1,6 +1,6 @@
 <?php
 
-include "conexao_bd.php";
+include "config_bd.php";
 
 class Coleta
 {
