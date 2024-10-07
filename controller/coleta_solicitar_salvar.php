@@ -11,9 +11,6 @@ $latitude = $_POST["txtLatitude"];
 $longitude = $_POST["txtLongitude"];
 $id_tipo_material = $_POST["selectIdTipoMaterial"];
 
-
-
-
 // -------- ENVIO DE IMAGEM PARA O SERVIDOR
 
 $foto = "";
@@ -28,9 +25,6 @@ if (isset($_FILES["pic"])) {
     move_uploaded_file($_FILES["pic"]["tmp_name"], $dir . $new_name); //Fazer upload do arquivo
 }
 
-
 echo $latitude . "<br />" . $longitude . "<br />" . $id_tipo_material . "<br />" . $foto;
-
-
 
 ?>
