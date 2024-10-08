@@ -75,9 +75,8 @@ class Associado
 
     // MÉTODO CONSTRUTOR
 
-    public function __construct($id, $nome, $cnpj_cooperativa)
+    public function __construct($nome, $cnpj_cooperativa)
     {
-        $this->id = $id;
         $this->nome = $nome;
         $this->cnpj_cooperativa = $cnpj_cooperativa;
     }
@@ -85,7 +84,7 @@ class Associado
     // MÉTODOS DA CLASSE
 
 public function criarAssociado(){
-    $sql = "INSERT INTO associado(nome,cnpj_cooperativa) VALUES ('$this->nome','$this->cnpj_cooperativa')";
+    $sql = "INSERT INTO associado(nome, cnpj_cooperativa) VALUES ('$this->nome', '$this->cnpj_cooperativa')";
 
     if (executarComando($sql)) {
         return true;

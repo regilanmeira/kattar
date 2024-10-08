@@ -19,7 +19,8 @@
             
             <div class="col-md-6">
                 <!-- A PROPRIEDADE VALUE TEM QUE SER CARREGADA COM O CNPJ DA COOPERATIVA QUE LOGOU NO SISTEMA -->
-                <input type="text" class="form-control" required name="txtCNPJ" value="00.000.000/0000-00" />
+                <!--<input type="text"  class="form-control" required name="txtCNPJ" value="" /> -->
+                <input type="text" onkeyup="formataCNPJ(this,event)" maxlength="18" class="form-control" required  name="txtCNPJ" placeholder="Informe o cnpj da cooperativa" />
             </div>
 
             

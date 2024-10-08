@@ -18,7 +18,7 @@ if ($status->criarStatus())
 }
 else
 {
-    echo "<h1 class='alert alert-danger'>Status da coleta não foi atualizado, tente outra vez. </h1> ";
+    echo "<h1 class='alert alert-danger'>Status da coleta não foi atualizado, tente novamente. </h1> ";
 }
 
 ?>
