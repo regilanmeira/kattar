@@ -7,11 +7,11 @@ include "referencias.php";
 
 //Capturar os elementos digitados no formulário
 
-$id = $_POST["txtId"];
+
 $descricao = $_POST["txtDescricao"];
 $observacao = $_POST["txtObservacao"];
 
-$tmat = new TipoMaterial($id,$descricao,$observacao);
+$tmat = new TipoMaterial($descricao,$observacao);
 
 if ($tmat->criarTipoMaterial())
 {
