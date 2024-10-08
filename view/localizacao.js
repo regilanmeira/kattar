@@ -14,8 +14,8 @@ function showPosition(position)
     
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-  document.localizacao.txtLatitude.value = position.coords.latitude;
-  document.localizacao.txtLongitude.value = position.coords.longitude;
+  document.localizacao.txtLatitude.value = latitude;
+  document.localizacao.txtLongitude.value = longitude;
 
 
 

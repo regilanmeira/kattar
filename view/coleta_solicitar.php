@@ -55,11 +55,11 @@
 
 
                 <div class="col-md-6">
-                    <input type="text" class="input" name="txtLatitude">
+                    <input type="hidden" class="input" name="txtLatitude">
                 </div>
                 <div class="col-md-6">
 
-                    <input type="text" class="input" name="txtLongitude">
+                    <input type="hidden" class="input" name="txtLongitude">
                 </div>
 
 
