@@ -14,7 +14,7 @@
             <?php require "cabecalho_pagina.php" ?>
 
             <div class="col-md-12">
-                <input type="text" class="form-control" required name="txtDescrição" placeholder="Descrição do status" />
+                <input type="text" class="form-control" required name="txtDescricao" placeholder="Descrição do status" />
             </div>
             
            

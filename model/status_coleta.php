@@ -1,6 +1,6 @@
 <?php
 
-include "conexao_bd.php";
+include "config_bd.php";
 
 class Status
 {
@@ -54,9 +54,9 @@ class Status
 
     // MÉTODO CONSTRUTOR
 
-    public function __construct($id,  $descricao)
+    public function __construct($descricao)
     {
-        $this->id = $id;
+        
         $this->descricao = $descricao;
     }
 
