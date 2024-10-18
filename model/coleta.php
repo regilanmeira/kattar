@@ -264,7 +264,7 @@ class Coleta
 
     // MÉTODO CONSTRUTOR
 
-    public function __construct($id,  $data_coleta,  $turno_coleta,  $estado,  $municipio,  $bairro,  $logradouro,  $descricao,  $foto_residuo,  $id_tipo_material,  $email_usuario,  $id_status)
+    public function __construct($id,  $data_coleta,  $turno_coleta,  $estado,  $municipio,  $bairro,  $logradouro,  $descricao,  $foto_residuo,  $id_tipo_material,  $email_usuario,  $id_status, $latitude, $longitude)
     {
         $this->id = $id;
         $this->data_coleta = $data_coleta;
@@ -278,6 +278,8 @@ class Coleta
         $this->id_tipo_material = $id_tipo_material;
         $this->email_usuario = $email_usuario;
         $this->id_status = $id_status;
+        $this->latitude = $latitude;
+        $this->longitude = $longitude;
     }
 
     // MÉTODOS DA CLASSE

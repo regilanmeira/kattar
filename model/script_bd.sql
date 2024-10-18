@@ -63,7 +63,9 @@ CREATE TABLE coleta
     foto_residuo text not null,
     id_tipo_material int REFERENCES tipo_material(id),
     email_usuario varchar(200) REFERENCES usuario(email),
-    id_status int REFERENCES status_coleta(id)
+    id_status int REFERENCES status_coleta(id),
+    latitude Decimal(10, 8),
+    longitude Decimal(11, 8)
 );
 
 CREATE TABLE historico_coleta
