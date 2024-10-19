@@ -14,8 +14,6 @@ CREATE TABLE usuario
     logradouro varchar(80) not null
 );
 
-
-
 CREATE TABLE cooperativa
 (
 	cnpj varchar(20) PRIMARY KEY not null,
@@ -65,7 +63,7 @@ CREATE TABLE coleta
     email_usuario varchar(200) REFERENCES usuario(email),
     id_status int REFERENCES status_coleta(id),
     latitude Decimal(10, 8),
-    longitude Decimal(11, 8)
+    longitude Decimal(11, 8) !-- longitude DOUBLE, latitude DOUBLE
 );
 
 CREATE TABLE historico_coleta
@@ -76,5 +74,3 @@ CREATE TABLE historico_coleta
     id_status int REFERENCES status_coleta(id),
     id_associado int REFERENCES associado(id)
 );
-
-

@@ -19,6 +19,8 @@ class Coleta
     private $id_tipo_material;
     private $email_usuario;
     private $id_status;
+    private $latitude;
+    private $longitude;
 
     // MÉTODOS GETS E SETS
 
@@ -262,6 +264,46 @@ class Coleta
         return $this;
     }
 
+    /**
+     * Get the value of longitude
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * Set the value of longitude
+     *
+     * @return  self
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of latitude
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * Set the value of latitude
+     *
+     * @return  self
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
     // MÉTODO CONSTRUTOR
 
     public function __construct($id,  $data_coleta,  $turno_coleta,  $estado,  $municipio,  $bairro,  $logradouro,  $descricao,  $foto_residuo,  $id_tipo_material,  $email_usuario,  $id_status, $latitude, $longitude)
@@ -283,46 +325,46 @@ class Coleta
     }
 
     // MÉTODOS DA CLASSE
-    public function criarColeta(){
+    public function criarColeta()
+    {
         $sql = "INSERT INTO coleta(data_coleta,turno_coleta,estado,municipio,bairro,logradouro,descricao,foto_residuo,id_tipo_material,email_usuario,id_status) VALUES ('$this->data_coleta','$this->turno_coleta','$this->estado','$this->municipio','$this->bairro','$this->logradouro','$this->descricao','$this->foto_residuo','$this->id_tipo_material','$this->email_usuario','$this->id_status')";
-    
+
         if (executarComando($sql)) {
             return true;
         } else {
             return false;
         }
     }
-    
+
     public function atualizarColeta()
     {
         $sql = "UPDATE coleta SET data_coleta = '$this->data_coleta', turno_coleta = '$this->turno_coleta', estado = '$this->estado', municipio = '$this->municipio', bairro = '$this->bairro', logradouro = '$this->logradouro', descricao = '$this->descricao', foto_residuo = '$this->foto_residuo', id_tipo_material = '$this->id_tipo_material', email_usuario = '$this->email_usuario', id_status ='$this->id_status'";
         $sql .= " WHERE id = '$this->id'";
-    
+
         if (executarComando($sql)) {
             return true;
         } else {
             return false;
         }
     }
-    
+
     public function removerColeta()
     {
         $sql = "DELETE FROM coleta";
         $sql .= " WHERE id = '$this->id'";
-    
+
         if (executarComando($sql)) {
             return true;
         } else {
             return false;
         }
     }
-    
-    
+
     public function exibirColeta()
     {
         $sql = "SELECT * FROM coleta ORDER BY nome";
         $tabela = retornarDados($sql);
-    
+
         return $tabela;
     }
 }
