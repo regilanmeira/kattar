@@ -11,6 +11,14 @@ $latitude = $_POST["txtLatitude"];
 $longitude = $_POST["txtLongitude"];
 $id_tipo_material = $_POST["selectIdTipoMaterial"];
 
+$col = new Coleta($latitude,$longitude,$tipo_material);
+
+if ($col->criarColeta()) {
+    echo "<h1 class='alert alert-success'>Coleta Criada!</h1>";
+} else {
+    echo "<h1 class='alert alert-danger'>Não foi possível solicitar coleta.Tente novamente</h1> ";
+}
+
 // -------- ENVIO DE IMAGEM PARA O SERVIDOR
 
 $foto = "";
