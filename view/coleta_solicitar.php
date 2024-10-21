@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require "referencias.php";
-    require "config_bd.php";
+   
     ?>
 
     <script src="localizacao.js"></script>
 </head>
 
 <body onload="getLocation();">
+    <?php include "../model/tipo_material.php";
+ ?>
     <form name="localizacao" method="post" action="../controller/coleta_solicitar_salvar.php" enctype="multipart/form-data">
 
         <div class="container">
@@ -28,10 +30,21 @@
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Selecione o tipo do material</label>
                     <select name="selectIdTipoMaterial" class="form-control">
+                    <?php
+                        $tipo_material = new TipoMaterial("","");
+                        
+                        $dados = $tipo_material->exibirTipoMaterial();
 
-                        <option>Papel</option>
-                        <option>Plástico</option>
-                        <option>Vidro</option>
+                        while($linha = mysqli_fetch_assoc($dados))
+                        {
+                    ?>
+                        <option value="<?php echo $linha["id"]?>"><?php echo $linha["descricao"]?></option>
+
+                    <?php 
+                        }
+                    ?>
+                    ?>
+                      
 
                     </select>
 
