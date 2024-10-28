@@ -52,7 +52,7 @@
 
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Data para coleta</label>
-                    <input type="date" class="form-control" placeholder="Data para coleta">
+                    <input type="date" class="form-control" name="dataColeta" placeholder="Data para coleta">
                 </div>
 
                 <div class="col-md-12" style="text-align: left;">
@@ -62,7 +62,7 @@
 
 
                 </div>
-
+        
 
 
 
@@ -76,6 +76,33 @@
                 </div>
 
 
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Logradouro</label>
+                    <input type="text" class="form-control" name="txtLogradouro" placeholder="Logradouro (Rua, Avenida, Travessa...)">
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Bairro</label>
+                    <input type="text" class="form-control" name="txtBairro" placeholder="Bairro">
+                
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Município</label>
+                    <input type="text" class="form-control" name="txtMunicipio" placeholder="Município">
+               
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Email</label>
+                    <input type="email" class="form-control" name="txtEmail" placeholder="Email (ex: kattar@email.com)">
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Estado</label>
+                    <input type="text" class="form-control" name="txtEstado" placeholder="UF (Ba,Sp...)" maxlength="2">
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Turno</label>
+                    <input type="text" class="form-control" name="txtTurno" placeholder="Turno (manhã, tarde, noite)">
+                </div>
+                
 
             </div>
 

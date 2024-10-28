@@ -10,8 +10,18 @@ include "referencias.php";
 $latitude = $_POST["txtLatitude"];
 $longitude = $_POST["txtLongitude"];
 $id_tipo_material = $_POST["selectIdTipoMaterial"];
+$bairro = $_POST["txtBairro"];
+$estado = $_POST["txtEstado"];
+$municipio = $_POST["txtMunicipio"];
+$logradouro = $_POST["txtLogradouro"];
+$email_usuario = $_POST["txtEmail"];
+$data_coleta = $_POST["dataColeta"];
+$descricao = $_POST["descricao"];
+$turno_coleta = $_POST["txtTurno"];
+$foto_residuo = $_FILES["pic"];
 
 
+$col = new Coleta($email_usuario, $estado, $municipio, $bairro, $logradouro, $id_tipo_material, $longitude, $latitude, $data_coleta, $descricao, $turno_coleta, $foto_residuo);
 
 if ($col->criarColeta()) {
     echo "<h1 class='alert alert-success'>Coleta Criada!</h1>";
