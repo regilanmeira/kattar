@@ -6,7 +6,7 @@ CREATE TABLE usuario
 (
     email varchar(255) PRIMARY KEY,
     nome varchar(200) not null,
-    senha varchar(30) not null,
+    senha text not null,
     telefone varchar(14) not null UNIQUE,
     estado varchar(60) not null,
     municipio varchar(60) not null,
@@ -19,7 +19,7 @@ CREATE TABLE cooperativa
 	cnpj varchar(20) PRIMARY KEY not null,
 	nome varchar(200) not null,
     email varchar(255) not null UNIQUE,
-    senha varchar(30) not null,
+    senha text not null,
     telefone varchar(14) not null UNIQUE,
     estado varchar(60) not null,
     municipio varchar(60) not null,
