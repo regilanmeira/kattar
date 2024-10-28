@@ -16,7 +16,9 @@ $municipio = $_POST["txtMunicipio"];
 $bairro = $_POST["txtBairro"];
 $logradouro = $_POST["txtLogradouro"];
 
-$usua = new Usuario($nome, $email, $senha, $telefone, $estado, $municipio, $bairro, $logradouro);
+$hash = password_hash($senha,1);
+
+$usua = new Usuario($nome, $email, $hash, $telefone, $estado, $municipio, $bairro, $logradouro);
 
 if ($usua->criarUsuario()) {
     echo "<h1 class='alert alert-success'>Usuário criado com sucesso!</h1>";
