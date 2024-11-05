@@ -319,7 +319,7 @@ class Coleta
         $this->foto_residuo = $foto_residuo;
         $this->id_tipo_material = $id_tipo_material;
         $this->email_usuario = $email_usuario;
-        //$this->id_status = $id_status;
+        $this->id_status = 1;
         $this->latitude = $latitude;
         $this->longitude = $longitude;
     }
@@ -328,6 +328,8 @@ class Coleta
     public function criarColeta()
     {
         $sql = "INSERT INTO coleta(data_coleta,turno_coleta,estado,municipio,bairro,logradouro,descricao,foto_residuo,id_tipo_material,email_usuario,id_status,latitude,longitude) VALUES ('$this->data_coleta','$this->turno_coleta','$this->estado','$this->municipio','$this->bairro','$this->logradouro','$this->descricao','$this->foto_residuo','$this->id_tipo_material','$this->email_usuario','$this->id_status','$this->latitude','$this->longitude')";
+
+        echo $sql;
 
         if (executarComando($sql)) {
             return true;

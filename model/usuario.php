@@ -208,7 +208,15 @@ class Usuario
 
     public function modificarSenha() {}
 
-    public function fazerLogin() {}
+    public function buscarUsuarioPorEmail() {
+        $sql = "SELECT * FROM usuario WHERE email = '$this->email'";
+        $tabela = retornarDados($sql);
+    
+        return $tabela;
+        
+      
+
+    }
 
 
     public function atualizarUsuario()

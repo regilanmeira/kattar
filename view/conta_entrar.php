@@ -23,24 +23,35 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
 
 
-                            <input type="email" class="form-control" placeholder="E-mail ou Número de Telefone">
+                            <input type="email" name="txtEmail" class="form-control" placeholder="E-mail ou Número de Telefone">
                         </div>
                     
                    
-                        <div class="col-md-6">
+                        <div class="col-md-4">
 
 
-                            <input type="password" class="form-control" placeholder="Senha de Acesso">
+                            <input type="password" name="txtSenha" class="form-control" placeholder="Senha de Acesso">
                         </div>
+
+                        <div class="col-md-4">
+
+<select name="tipoAcesso" class="form-control">
+    <option value="">Selecione</option>
+    <option value="cidadao">Cidadão</option>
+    <option value="cooperativa">Cooperativa</option>
+</select>
+</div>
+
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
 
 
-                            <input type="submit" class="btn btn-success" formaction="home.php" value="Entrar">
+                            <input type="submit" class="btn btn-success" formaction="../controller/usuario_entrar.php" value="Entrar">
                         </div>
                     </div>
                     <div class="row">

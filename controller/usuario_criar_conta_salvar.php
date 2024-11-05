@@ -16,9 +16,10 @@ $municipio = $_POST["txtMunicipio"];
 $bairro = $_POST["txtBairro"];
 $logradouro = $_POST["txtLogradouro"];
 
-$hash = password_hash($senha,1);
+$hash = password_hash($senha, 1);
 
-$usua = new Usuario($nome, $email, $hash, $telefone, $estado, $municipio, $bairro, $logradouro);
+$usua = new Usuario($email,$nome,$hash,$telefone,$estado,$municipio,$bairro,$logradouro);
+
 
 if ($usua->criarUsuario()) {
     echo "<h1 class='alert alert-success'>Usuário criado com sucesso!</h1>";
@@ -26,4 +27,16 @@ if ($usua->criarUsuario()) {
     echo "<h1 class='alert alert-danger'>Não foi possível criar o usuário. Verifique os dados informados. </h1> ";
 }
 
+
+
 ?>
+
+<div class="row">
+    <div class="col-md-12" style="text-align: left;">
+
+        <a href="../view/conta_criar.php">
+            <input type="button" class="btn btn-danger" value="Voltar">
+        </a>
+    </div>
+
+</div>

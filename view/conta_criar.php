@@ -23,7 +23,7 @@
                 <input type="submit" class="btn btn-success" value="Cidadão" formaction="usuario_criar_conta.php">
             </div>
 
-            <div class="row">
+            
             <div class="col-md-12" style="text-align: left;">
 
                 <a href="index.php">
@@ -31,7 +31,7 @@
                 </a>
             </div>
 
-        </div>
+      
 
     </div>
     </form>
