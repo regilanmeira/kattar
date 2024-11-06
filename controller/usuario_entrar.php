@@ -24,6 +24,8 @@ if ($dados != null)
     $linha = mysqli_fetch_assoc($dados);
     if (password_verify($senha,$linha["senha"]))
     {
+        session_start();
+        $_SESSION["email"] = $usu->getEmail();
         header("location:../view/home_usuario.php");
     }
     else

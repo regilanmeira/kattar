@@ -92,7 +92,10 @@
                 </div>
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Email</label>
-                    <input type="email" class="form-control" name="txtEmail" placeholder="Email (ex: kattar@email.com)">
+                <?php session_start();
+                $email = $_SESSION["email"];
+                ?>
+                    <input type="email" class="form-control" name="txtEmail" value="<?php echo $email ?>" >
                 </div>
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Estado</label>
@@ -161,7 +164,7 @@
             <div class="row">
                 <div class="col-md-12" style="text-align: left;">
 
-                    <a href="home.php">
+                    <a href="home_usuario.php">
                         <input type="button" class="btn btn-danger" value="Voltar">
                     </a>
 

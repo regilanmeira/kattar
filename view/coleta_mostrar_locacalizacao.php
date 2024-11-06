@@ -48,6 +48,14 @@
 
                 </div>
 
+                <div class="col-md-12" style="text-align: left;">
+
+                    <a href="home_usuario.php">
+                        <input type="button" class="btn btn-danger" value="Voltar">
+                    </a>
+
+                </div>
+
             </div>
 
             <?php require "rodape.php" ?>

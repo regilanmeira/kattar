@@ -23,7 +23,7 @@
                 <input type="submit" class="btn btn-success" formaction="coleta_solicitar.php" value="Coleta" />
             </div>
             <div class="col-md-4">
-                <input type="submit" class="btn btn-success" formaction="coleta_historico.php" value="Histórico da coleta" />
+                <input type="submit" class="btn btn-success" formaction="coleta_solicitacoes.php" value="Minhas solicitações" />
             </div>
 
             <div class="col-md-4">
@@ -36,7 +36,7 @@
 
         </div>
 
-        <?php require "rodape.php" ?>
+        <?php require "rodape_usuario.php" ?>
 
         
 

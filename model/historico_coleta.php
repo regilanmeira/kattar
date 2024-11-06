@@ -1,6 +1,6 @@
 <?php
 
-include "conexao_bd.php";
+include_once "conexao_bd.php";
 
 class HistoricoColeta
 {

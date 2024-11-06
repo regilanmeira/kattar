@@ -1,6 +1,6 @@
 <?php
 
-include "config_bd.php";
+include_once "config_bd.php";
 
 class TipoMaterial
 {

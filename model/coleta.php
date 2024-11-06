@@ -1,6 +1,6 @@
 <?php
 
-include "config_bd.php";
+include_once "config_bd.php";
 
 class Coleta
 {
@@ -329,7 +329,7 @@ class Coleta
     {
         $sql = "INSERT INTO coleta(data_coleta,turno_coleta,estado,municipio,bairro,logradouro,descricao,foto_residuo,id_tipo_material,email_usuario,id_status,latitude,longitude) VALUES ('$this->data_coleta','$this->turno_coleta','$this->estado','$this->municipio','$this->bairro','$this->logradouro','$this->descricao','$this->foto_residuo','$this->id_tipo_material','$this->email_usuario','$this->id_status','$this->latitude','$this->longitude')";
 
-        echo $sql;
+      
 
         if (executarComando($sql)) {
             return true;
@@ -364,9 +364,27 @@ class Coleta
 
     public function exibirColeta()
     {
-        $sql = "SELECT * FROM coleta ORDER BY nome";
+        $sql = "SELECT * FROM coleta ORDER BY data_coleta";
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
+
+    public function exibirColetaPorUsuarioStatus($email,$id_status)
+    {
+        $sql = "SELECT * FROM coleta WHERE email_usuario = '$email' AND id_status = '$id_status' ORDER BY data_coleta ";
+        echo $sql;
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
+
+    public function exibirColetaPorStatus($id_status)
+    {
+        $sql = "SELECT * FROM coleta WHERE $id_status = '$id_status' ORDER BY data_coleta ";
         $tabela = retornarDados($sql);
 
         return $tabela;
     }
 }
+
