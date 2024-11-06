@@ -373,7 +373,7 @@ class Coleta
     public function exibirColetaPorUsuarioStatus($email,$id_status)
     {
         $sql = "SELECT * FROM coleta WHERE email_usuario = '$email' AND id_status = '$id_status' ORDER BY data_coleta ";
-        echo $sql;
+     
         $tabela = retornarDados($sql);
 
         return $tabela;

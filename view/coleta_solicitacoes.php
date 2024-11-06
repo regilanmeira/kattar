@@ -70,7 +70,7 @@
                                 $dados = $coleta->exibirColetaPorUsuarioStatus($email,$id_status);
         
                             while($linha = mysqli_fetch_assoc($dados))
-                            
+                            {
                             ?>
                             <tr>
                                 <td><?php echo $linha["data_coleta"] ?></td>
@@ -79,6 +79,7 @@
 
                             <?php 
                             }
+                        }
                             ?>
                         </table>
                  
