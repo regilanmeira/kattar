@@ -20,7 +20,7 @@
             <?php require "cabecalho_pagina.php" ?>
 
             <div class="col-md-4">
-                <input type="submit" class="btn btn-success" formaction="coleta_solicitar.php" value="Coleta" />
+                <input type="submit" class="btn btn-success" formaction="coleta_solicitar.php" value="Solicitar coleta" />
             </div>
             <div class="col-md-4">
                 <input type="submit" class="btn btn-success" formaction="coleta_solicitacoes.php" value="Minhas solicitações" />

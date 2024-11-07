@@ -44,10 +44,11 @@ $col = new Coleta($data_coleta,$estado,$municipio,$bairro,$logradouro,$descricao
 
 
 if ($col->criarColeta()) {
-    echo "<h1 class='alert alert-success'>Coleta Criada!</h1>";
+    echo "<h1 class='alert alert-success'>Coleta solicitada. Aguarde encaminhamentos.</h1>";
 } else {
     echo "<h1 class='alert alert-danger'>Não foi possível solicitar coleta.Tente novamente</h1> ";
 }
 
 
 ?>
+

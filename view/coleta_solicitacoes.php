@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require "referencias.php";
-   
+
     ?>
 
     <script src="localizacao.js"></script>
@@ -13,9 +13,9 @@
 
 <body onload="getLocation();">
     <?php include "../model/status_coleta.php";
-     include "../model/coleta.php"; 
- ?>
-    <form name="localizacao" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+    include "../model/coleta.php";
+    ?>
+    <form name="localizacao" method="post" action="coleta_solicitacoes_status.php" enctype="multipart/form-data">
 
         <div class="container">
 
@@ -24,81 +24,92 @@
 
                 <?php require "cabecalho_pagina.php" ?>
 
-               
+                <div class="col-md-12">
+                <h5>Minhas solicitações</h5>
+                </div>
 
-                <div class="col-md-12" style="text-align: left;">
-                <label class="label" >Selecione o status</label>
+                <div class="col-md-12">
+
+                    <table>
+                        <tr>
+                            <th style="text-align: left;padding:5px">Data da Coleta</th>
+                            <th style="text-align: left;padding:5px">Descrição</th>
+                            <th style="text-align: left;padding:5px">Ações</th>
+
+                        </tr>
+                        <?php
+
+
+                        session_start();
+                        $email = $_SESSION["email"];
+
+                        $coleta = new coleta("", "", "", "", "", "", "", "", "", "", "", "");
+
+                        $dados = $coleta->exibirColetaPorUsuario($email);
+
+                        while ($linha = mysqli_fetch_assoc($dados)) {
+                        ?>
+                            <tr>
+                                <td style="text-align: left;padding:5px"><?php echo $linha["data_coleta"] ?></td>
+                                <td style="text-align: left;padding:5px"><?php echo $linha["descricao"] ?></td>
+                                <td>
+                                    <a href="">
+                                    <input type="button" class="btn btn-success" value="Ver"> 
+                                    </a>
+                                </td>
+                            </tr>
+
+                        <?php
+                        }
+
+                        ?>
+                    </table>
+
+                </div>
+
+
+                <div style="margin-top:20px;"> </div>
+
+
+                <div class="col-md-12" style="text-align: left;" >
+                    <label class="label">Pesquise por status</label>
                     <select name="selectStatus" class="form-control">
-                    <?php
+                        <?php
                         $status = new status("");
-                        
+
                         $dados = $status->exibirStatus();
 
-                        while($linha = mysqli_fetch_assoc($dados))
-                        {
-                    ?>
-                        <option value="<?php echo $linha["id"]?>"><?php echo $linha["descricao"]?></option>
+                        while ($linha = mysqli_fetch_assoc($dados)) {
+                        ?>
+                            <option value="<?php echo $linha["id"] ?>"><?php echo $linha["descricao"] ?></option>
 
-                    <?php 
+                        <?php
                         }
-                    ?>
-                    ?>
-                      
+                        ?>
+                        ?>
+
 
                     </select>
 
                 </div>
 
-                
-                <div class="col-md-12">
 
-                        <table>
-                            <tr>
-                                <td>Data da Coleta</td>
-                                <td>Descrição</td>
-                        
-                            </tr>
-                            <?php 
-                            if ($_SERVER['REQUEST_METHOD']  == 'POST')
-                            {
-                            
-                                session_start();
-                                $email = $_SESSION["email"];
-                                $id_status = 1;
-                                $coleta = new coleta("","","","","","","","","","","","");
-                        
-                                $dados = $coleta->exibirColetaPorUsuarioStatus($email,$id_status);
-        
-                            while($linha = mysqli_fetch_assoc($dados))
-                            {
-                            ?>
-                            <tr>
-                                <td><?php echo $linha["data_coleta"] ?></td>
-                                <td><?php echo $linha["descricao"] ?></td>
-                            </tr>
 
-                            <?php 
-                            }
-                        }
-                            ?>
-                        </table>
-                 
-                 </div>
 
-            
+
                 <div class="col-md-12" style="text-align: left;">
 
 
-                
 
-                    <input type="submit" class="btn btn-success" value="Visualisar" >
+
+                    <input type="submit" class="btn btn-success" value="Pequisar">
                 </div>
-        
 
 
 
 
-           
+
+
                 <div class="col-md-12" style="text-align: left;">
 
                     <a href="home_usuario.php">

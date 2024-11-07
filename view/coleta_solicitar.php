@@ -24,6 +24,10 @@
                 <?php require "cabecalho_pagina.php" ?>
 
                 <div class="col-md-12">
+                <h5>Solicitar coleta</h5>
+                </div>
+
+                <div class="col-md-12">
                     <textarea class="form-control" name="descricao" placeholder="Descrição do material a ser coletado"></textarea>
                 </div>
 
@@ -95,7 +99,8 @@
                 <?php session_start();
                 $email = $_SESSION["email"];
                 ?>
-                    <input type="email" class="form-control" name="txtEmail" value="<?php echo $email ?>" >
+                    <input type="email" class="form-control" name="txtEmailVisualizar" disabled value="<?php echo $email ?>" >
+                    <input type="hidden" class="form-control" name="txtEmail" value="<?php echo $email ?>" >
                 </div>
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Estado</label>
