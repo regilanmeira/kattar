@@ -11,7 +11,7 @@ $cnpj_cooperativa = $_POST["txtCNPJ"];
 $nome = $_POST["txtNome"];
 
 
-$assoc = new Associado($cnpj_cooperativa, $nome);
+$assoc = new Associado($nome,$cnpj_cooperativa, );
 
 if ($assoc->criarAssociado()) {
     echo "<h1 class='alert alert-success'>Associado adicionado com sucesso!</h1>";
