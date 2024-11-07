@@ -1,6 +1,6 @@
 <?php
 
-include_once "conexao_bd.php";
+include_once "config_bd.php";
 
 class HistoricoColeta
 {
@@ -8,83 +8,31 @@ class HistoricoColeta
     // ATRIBUTOS DA CLASSE
 
     private $id;
-    private $descricao;
+    private $data_historico;
+    private $id_associado;
+    private $id_coleta;
+    private $id_status;
     private $observacao;
 
     // MÉTODOS GETS E SETS
 
-    /**
-     * Get the value of id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of descricao
-     */
-    public function getDescricao()
-    {
-        return $this->descricao;
-    }
-
-    /**
-     * Set the value of descricao
-     *
-     * @return  self
-     */
-    public function setDescricao($descricao)
-    {
-        $this->descricao = $descricao;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of observacao
-     */
-    public function getObservacao()
-    {
-        return $this->observacao;
-    }
-
-    /**
-     * Set the value of observacao
-     *
-     * @return  self
-     */
-    public function setObservacao($observacao)
-    {
-        $this->observacao = $observacao;
-
-        return $this;
-    }
 
     // MÉTODO CONSTRUTOR
 
-    public function __construct($id,  $descricao,  $observacao)
+    public function __construct($id,  $data_historico,  $id_associado, $id_coleta, $id_status, $observacao)
     {
         $this->id = $id;
-        $this->descricao = $descricao;
+        $this->data_historico = $data_historico;
+        $this->id_associado = $id_associado;
+        $this->id_coleta = $id_coleta;
+        $this->id_status = $id_status;
         $this->observacao = $observacao;
     }
 
     // MÉTODOS DA CLASSE
-    public function criarTipoMaterial(){
-        $sql = "INSERT INTO tipo_material(descricao,observacao) VALUES ('$this->descricao','$this->observacao')";
+    public function analisarColeta()
+    {
+        $sql = "INSERT INTO historico_coleta(data_historico,id_associado,id_coleta,id_status,observacao) VALUES ('$this->data_historico','$this->id_associado','$this->id_coleta','$this->id_status','$this->observacao')";
 
         if (executarComando($sql)) {
             return true;
@@ -93,36 +41,16 @@ class HistoricoColeta
         }
     }
 
-    public function atualizarTipoMaterial()
+    public function exibirHistoricoColeta($id_coleta)
     {
-        $sql = "UPDATE tipo_material SET descricao = '$this->descricao', observacao = '$this->observacao'";
-        $sql .= " WHERE id = '$this->id'";
-
-        if (executarComando($sql)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function removerTipoMaterial()
-    {
-        $sql = "DELETE FROM tipo_material";
-        $sql .= " WHERE id = '$this->id'";
-
-        if (executarComando($sql)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-    public function exibirTipoMaterial()
-    {
-        $sql = "SELECT * FROM tipo_material ORDER BY descricao";
+        $sql = " SELECT historico_coleta.data_historico,historico_coleta.observacao,";
+        $sql .= " status_coleta.descricao,associado.nome FROM historico_coleta INNER JOIN status_coleta ON";
+        $sql .= " historico_coleta.id_status = status_coleta.id INNER JOIN associado ON";
+        $sql .= " historico_coleta.id_associado = associado.id WHERE id_coleta = '$id_coleta' ORDER BY historico_coleta.data_historico DESC";
+        
         $tabela = retornarDados($sql);
 
+    
         return $tabela;
     }
 }

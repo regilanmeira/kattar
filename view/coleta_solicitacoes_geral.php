@@ -14,8 +14,9 @@
 <body onload="getLocation();">
     <?php include "../model/status_coleta.php";
     include "../model/coleta.php";
+    include "../model/tipo_material.php";
     ?>
-    <form name="localizacao" method="post" action="coleta_solicitacoes_status.php" enctype="multipart/form-data">
+    <form name="localizacao" method="post" enctype="multipart/form-data">
 
         <div class="container">
 
@@ -25,14 +26,14 @@
                 <?php require "cabecalho_pagina.php" ?>
 
                 <div class="col-md-12">
-                <h5>Minhas solicitações</h5>
+                <h5>Coletas solicitadas</h5>
                 </div>
 
                 <div class="col-md-12">
 
                     <table>
                         <tr>
-                            <th style="text-align: left;padding:5px">Data da Coleta</th>
+                        <th style="text-align: left;padding:5px">Data da Coleta</th>
                             <th style="text-align: left;padding:5px">Descrição</th>
                             <th style="text-align: left;padding:5px">Tipo de material</th>
                             <th style="text-align: left;padding:5px">Status</th>
@@ -47,7 +48,7 @@
 
                         $coleta = new coleta("", "", "", "", "", "", "", "", "", "", "", "");
 
-                        $dados = $coleta->exibirColetaPorUsuario($email);
+                        $dados = $coleta->exibirColeta();
 
                         while ($linha = mysqli_fetch_assoc($dados)) {
                         ?>
@@ -57,7 +58,7 @@
                                 <td style="text-align: left;padding:5px"><?php echo $linha["tipo_material_descricao"] ?></td>
                                 <td style="text-align: left;padding:5px"><?php echo $linha["status_coleta"] ?></td>
                                 <td>
-                                    <a href="coleta_solicitacoes_ver.php?id_coleta=<?php echo $linha["id"] ?>">
+                                    <a href="coleta_solicitacoes_geral_ver.php?id_coleta=<?php echo $linha["id"] ?>">
                                     <input type="button" class="btn btn-success" value="Ver"> 
                                     </a>
                                 </td>
@@ -90,6 +91,37 @@
                         <?php
                         }
                         ?>
+                    
+
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="col-md-12" style="text-align: left;">
+
+                    <input type="submit" class="btn btn-success" value="Pequisar" formaction="coleta_solicitacoes_geral_status.php">
+                </div>
+
+
+                <div class="col-md-12" style="text-align: left;" >
+                    <label class="label">Pesquise por tipo de material</label>
+                    <select name="selectTipoMateiral" class="form-control">
+                     
+                    <?php
+                        $tipo_material = new TipoMaterial("","");
+
+                        $dados = $tipo_material->exibirTipoMaterial();
+
+                        while ($linha = mysqli_fetch_assoc($dados)) {
+                            ?>
+                                <option value="<?php echo $linha["id"] ?>"><?php echo $linha["descricao"] ?></option>
+    
+                            <?php
+                            }
+                            ?>
                         ?>
 
 
@@ -99,24 +131,18 @@
 
 
 
-
-
                 <div class="col-md-12" style="text-align: left;">
 
-
-
-
-                    <input type="submit" class="btn btn-success" value="Pequisar">
+                    <input type="submit" class="btn btn-success" value="Pequisar" formaction="coleta_solicitacoes_geral_tipo_material.php">
                 </div>
 
 
 
 
 
-
                 <div class="col-md-12" style="text-align: left;">
 
-                    <a href="home_usuario.php">
+                    <a href="home.php">
                         <input type="button" class="btn btn-danger" value="Voltar">
                     </a>
 

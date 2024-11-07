@@ -21,4 +21,7 @@
 <script src="https://kit.fontawesome.com/93b56ca915.js" crossorigin="anonymous"></script>
 
 
-
+<?php 
+// Para desativar todos os erros
+error_reporting(0);
+?>

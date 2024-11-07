@@ -15,7 +15,7 @@ $tmat = new TipoMaterial($descricao,$observacao);
 
 if ($tmat->criarTipoMaterial())
 {
-    echo "<h1 class='alert alert-success'>Tipo de material adicionada com sucesso!</h1>";
+    echo "<h1 class='alert alert-success'>Tipo de material adicionado com sucesso!</h1>";
 }
 else
 {

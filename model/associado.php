@@ -123,6 +123,7 @@ public function exibirAssociado()
     $sql = "SELECT * FROM associado ORDER BY nome";
     $tabela = retornarDados($sql);
 
+    echo $sql;
     return $tabela;
 }
 

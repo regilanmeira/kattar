@@ -364,7 +364,10 @@ class Coleta
 
     public function exibirColeta()
     {
-        $sql = "SELECT * FROM coleta ORDER BY data_coleta";
+        $sql = "SELECT coleta.id,coleta.bairro,coleta.data_coleta,coleta.descricao,coleta.email_usuario,coleta.estado,";
+        $sql.= " coleta.foto_residuo,tipo_material.descricao as tipo_material_descricao,coleta.municipio,coleta.turno_coleta,status_coleta.descricao as status_coleta";
+        $sql .= " FROM coleta INNER JOIN tipo_material ON coleta.id_tipo_material = tipo_material.id INNER JOIN status_coleta ON ";
+        $sql .= " coleta.id_status = status_coleta.id  ORDER BY data_coleta DESC";
         $tabela = retornarDados($sql);
 
         return $tabela;
@@ -372,7 +375,10 @@ class Coleta
 
     public function exibirColetaPorUsuarioStatus($email,$id_status)
     {
-        $sql = "SELECT * FROM coleta WHERE email_usuario = '$email' AND id_status = '$id_status' ORDER BY data_coleta DESC";
+        $sql = "SELECT coleta.id,coleta.bairro,coleta.data_coleta,coleta.descricao,coleta.email_usuario,coleta.estado,";
+        $sql.= " coleta.foto_residuo,tipo_material.descricao as tipo_material_descricao,coleta.municipio,coleta.turno_coleta,status_coleta.descricao as status_coleta";
+        $sql .= " FROM coleta INNER JOIN tipo_material ON coleta.id_tipo_material = tipo_material.id INNER JOIN status_coleta ON ";
+        $sql .= " coleta.id_status = status_coleta.id  WHERE email_usuario = '$email' AND id_status = '$id_status' ORDER BY data_coleta DESC";
      
         $tabela = retornarDados($sql);
 
@@ -381,17 +387,49 @@ class Coleta
 
     public function exibirColetaPorUsuario($email)
     {
-        $sql = "SELECT * FROM coleta WHERE email_usuario = '$email' ORDER BY data_coleta DESC ";
+        $sql = "SELECT coleta.id,coleta.bairro,coleta.data_coleta,coleta.descricao,coleta.email_usuario,coleta.estado,";
+        $sql.= " coleta.foto_residuo,tipo_material.descricao as tipo_material_descricao,coleta.municipio,coleta.turno_coleta,status_coleta.descricao as status_coleta";
+        $sql .= " FROM coleta INNER JOIN tipo_material ON coleta.id_tipo_material = tipo_material.id INNER JOIN status_coleta ON ";
+        $sql .= " coleta.id_status = status_coleta.id  WHERE email_usuario = '$email' ORDER BY data_coleta DESC ";
      
         $tabela = retornarDados($sql);
 
         return $tabela;
     }
 
+    public function exibirColetaPorID($id_coleta)
+    {
+        $sql = "SELECT coleta.id,coleta.bairro,coleta.data_coleta,coleta.descricao,coleta.email_usuario,coleta.estado,";
+        $sql.= " coleta.foto_residuo,tipo_material.descricao as tipo_material_descricao,coleta.municipio,coleta.turno_coleta,status_coleta.descricao as status_coleta";
+        $sql .= " FROM coleta INNER JOIN tipo_material ON coleta.id_tipo_material = tipo_material.id INNER JOIN status_coleta ON ";
+        $sql .= " coleta.id_status = status_coleta.id WHERE coleta.id = '$id_coleta'";
+
+     
+
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
+
+
+
+    public function exibirColetaPorMaterial($id_tipo_material)
+    {
+        $sql = "SELECT coleta.id,coleta.bairro,coleta.data_coleta,coleta.descricao,coleta.email_usuario,coleta.estado,";
+        $sql.= " coleta.foto_residuo,tipo_material.descricao as tipo_material_descricao,coleta.municipio,coleta.turno_coleta,status_coleta.descricao as status_coleta";
+        $sql .= " FROM coleta INNER JOIN tipo_material ON coleta.id_tipo_material = tipo_material.id INNER JOIN status_coleta ON ";
+        $sql .= " coleta.id_status = status_coleta.id  WHERE id_tipo_material = '$id_tipo_material' ORDER BY data_coleta DESC ";
+        $tabela = retornarDados($sql);
+
+        return $tabela;
+    }
 
     public function exibirColetaPorStatus($id_status)
     {
-        $sql = "SELECT * FROM coleta WHERE $id_status = '$id_status' ORDER BY data_coleta DESC ";
+        $sql = "SELECT coleta.id,coleta.bairro,coleta.data_coleta,coleta.descricao,coleta.email_usuario,coleta.estado,";
+        $sql.= " coleta.foto_residuo,tipo_material.descricao as tipo_material_descricao,coleta.municipio,coleta.turno_coleta,status_coleta.descricao as status_coleta";
+        $sql .= " FROM coleta INNER JOIN tipo_material ON coleta.id_tipo_material = tipo_material.id INNER JOIN status_coleta ON ";
+        $sql .= " coleta.id_status = status_coleta.id  WHERE id_status = '$id_status' ORDER BY data_coleta DESC ";
         $tabela = retornarDados($sql);
 
         return $tabela;

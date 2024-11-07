@@ -14,11 +14,11 @@ $status = new Status ($descricao);
 
 if ($status->criarStatus())
 {
-    echo "<h1 class='alert alert-success'>Status atualizado com sucesso!</h1>";
+    echo "<h1 class='alert alert-success'>Status adicionado com sucesso!</h1>";
 }
 else
 {
-    echo "<h1 class='alert alert-danger'>Status da coleta não foi atualizado, tente novamente. </h1> ";
+    echo "<h1 class='alert alert-danger'>O Status da coleta não foi adicionado, tente novamente. </h1> ";
 }
 
 ?>

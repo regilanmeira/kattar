@@ -31,6 +31,16 @@
                     <textarea class="form-control" name="descricao" placeholder="Descrição do material a ser coletado"></textarea>
                 </div>
 
+                
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Email</label>
+                <?php session_start();
+                $email = $_SESSION["email"];
+                ?>
+                    <input type="email" class="form-control" name="txtEmailVisualizar" disabled value="<?php echo $email ?>" >
+                    <input type="hidden" class="form-control" name="txtEmail" value="<?php echo $email ?>" >
+                </div>
+
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Selecione o tipo do material</label>
                     <select name="selectIdTipoMaterial" class="form-control">
@@ -57,6 +67,17 @@
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Data para coleta</label>
                     <input type="date" class="form-control" name="dataColeta" placeholder="Data para coleta">
+                </div>
+
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Turno</label>
+                <select name="txtTurno"  class="form-control">
+                <option value="">Selecione</option>
+                    <option value="Matutino">Matutino</option>
+                    <option value="Vespertino">Vespertino</option>
+                    <option value="Noturno">Noturno</option>
+                </select>
+                   
                 </div>
 
                 <div class="col-md-12" style="text-align: left;">
@@ -89,19 +110,7 @@
                     <input type="text" class="form-control" name="txtBairro" placeholder="Bairro">
                 
                 </div>
-                <div class="col-md-6" style="text-align: left;">
-                <label class="label" >Município</label>
-                    <input type="text" class="form-control" name="txtMunicipio" placeholder="Município">
-               
-                </div>
-                <div class="col-md-6" style="text-align: left;">
-                <label class="label" >Email</label>
-                <?php session_start();
-                $email = $_SESSION["email"];
-                ?>
-                    <input type="email" class="form-control" name="txtEmailVisualizar" disabled value="<?php echo $email ?>" >
-                    <input type="hidden" class="form-control" name="txtEmail" value="<?php echo $email ?>" >
-                </div>
+
                 <div class="col-md-6" style="text-align: left;">
                 <label class="label" >Estado</label>
 
@@ -138,19 +147,19 @@
 
                    
                 </div>
-                <div class="col-md-6" style="text-align: left;">
-                <label class="label" >Turno</label>
-                <select name="txtTurno"  class="form-control">
-                <option value="">Selecione</option>
-                    <option value="Matutino">Matutino</option>
-                    <option value="Vespertino">Vespertino</option>
-                    <option value="Noturno">Noturno</option>
-                </select>
-                   
-                </div>
+                
                 
 
-            </div>
+           
+
+
+                <div class="col-md-6" style="text-align: left;">
+                <label class="label" >Município</label>
+                    <input type="text" class="form-control" name="txtMunicipio" placeholder="Município">
+               
+                </div>
+                
+                </div>
 
             <div class="row">
                 <div class="col-md-12" style="text-align: left;">

@@ -36,6 +36,7 @@
                             <th style="text-align: left;padding:5px">Descrição</th>
                             <th style="text-align: left;padding:5px">Tipo de material</th>
                             <th style="text-align: left;padding:5px">Status</th>
+                            
                             <th style="text-align: left;padding:5px">Ações</th>
 
                         </tr>
@@ -46,8 +47,19 @@
                         $email = $_SESSION["email"];
 
                         $coleta = new coleta("", "", "", "", "", "", "", "", "", "", "", "");
+                        $id_status = $_POST["selectStatus"];
+                        $dados = $coleta->exibirColetaPorStatus($id_status);
 
-                        $dados = $coleta->exibirColetaPorUsuario($email);
+                        if ($dados == 0)
+                        {
+                            echo "<h1 class='alert alert-danger'>Não há solicitações de coleta para o status indicado. </h1>";
+                           
+
+                           echo " <a href='coleta_solicitacoes_geral.php'><input type='button' class='btn btn-danger' value='Voltar'></a>";
+        
+                            
+                            die;
+                        }
 
                         while ($linha = mysqli_fetch_assoc($dados)) {
                         ?>
@@ -57,7 +69,7 @@
                                 <td style="text-align: left;padding:5px"><?php echo $linha["tipo_material_descricao"] ?></td>
                                 <td style="text-align: left;padding:5px"><?php echo $linha["status_coleta"] ?></td>
                                 <td>
-                                    <a href="coleta_solicitacoes_ver.php?id_coleta=<?php echo $linha["id"] ?>">
+                                <a href="coleta_solicitacoes_geral_ver.php?id_coleta=<?php echo $linha["id"] ?>">
                                     <input type="button" class="btn btn-success" value="Ver"> 
                                     </a>
                                 </td>
@@ -72,51 +84,12 @@
                 </div>
 
 
-                <div style="margin-top:20px;"> </div>
-
-
-                <div class="col-md-12" style="text-align: left;" >
-                    <label class="label">Pesquise por status</label>
-                    <select name="selectStatus" class="form-control">
-                        <?php
-                        $status = new status("");
-
-                        $dados = $status->exibirStatus();
-
-                        while ($linha = mysqli_fetch_assoc($dados)) {
-                        ?>
-                            <option value="<?php echo $linha["id"] ?>"><?php echo $linha["descricao"] ?></option>
-
-                        <?php
-                        }
-                        ?>
-                        ?>
-
-
-                    </select>
-
-                </div>
-
-
-
+                <div style="margin-top:20px;"> </div>                           
 
 
                 <div class="col-md-12" style="text-align: left;">
 
-
-
-
-                    <input type="submit" class="btn btn-success" value="Pequisar">
-                </div>
-
-
-
-
-
-
-                <div class="col-md-12" style="text-align: left;">
-
-                    <a href="home_usuario.php">
+                    <a href="coleta_solicitacoes.php">
                         <input type="button" class="btn btn-danger" value="Voltar">
                     </a>
 

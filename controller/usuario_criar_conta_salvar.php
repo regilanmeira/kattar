@@ -22,7 +22,7 @@ $usua = new Usuario($email,$nome,$hash,$telefone,$estado,$municipio,$bairro,$log
 
 
 if ($usua->criarUsuario()) {
-    echo "<h1 class='alert alert-success'>Usuário criado com sucesso!</h1>";
+    echo "<h1 class='alert alert-success'>Usuário adicionado com sucesso!</h1>";
 } else {
     echo "<h1 class='alert alert-danger'>Não foi possível criar o usuário. Verifique os dados informados. </h1> ";
 }
