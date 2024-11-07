@@ -26,3 +26,13 @@ if ($coop->criarCooperativa()) {
 }
 
 ?>
+
+<div class="row">
+    <div class="col-md-12" style="text-align: left;">
+
+        <a href="../view/index.php">
+            <input type="button" class="btn btn-danger" value="Voltar">
+        </a>
+    </div>
+
+</div>

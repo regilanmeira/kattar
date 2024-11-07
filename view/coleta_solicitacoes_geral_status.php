@@ -25,7 +25,7 @@
                 <?php require "cabecalho_pagina.php" ?>
 
                 <div class="col-md-12">
-                <h5>Minhas solicitações</h5>
+                <h5>Coletas solicitadas</h5>
                 </div>
 
                 <div class="col-md-12">

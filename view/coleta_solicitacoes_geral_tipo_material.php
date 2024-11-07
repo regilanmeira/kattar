@@ -25,7 +25,7 @@
                 <?php require "cabecalho_pagina.php" ?>
 
                 <div class="col-md-12">
-                <h5>Minhas solicitações</h5>
+                <h5>Coletas solicitadas</h5>
                 </div>
 
                 <div class="col-md-12">
@@ -52,7 +52,7 @@
 
                         if ($dados == 0)
                         {
-                            echo "<h1 class='alert alert-danger'>Não há solicitações de coleta para o status indicado. </h1>";
+                            echo "<h1 class='alert alert-danger'>Não há solicitações de coleta para o tipo de material indicado. </h1>";
                            
 
                            echo " <a href='coleta_solicitacoes_geral.php'><input type='button' class='btn btn-danger' value='Voltar'></a>";
