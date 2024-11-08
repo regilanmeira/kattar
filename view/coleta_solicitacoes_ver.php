@@ -149,8 +149,8 @@
                         <tr>
                             <td style="text-align: left;padding:5px"><?php echo $linha["data_historico"] ?></td>
                             <td style="text-align: left;padding:5px"><?php echo $linha["observacao"] ?></td>
-                            <td style="text-align: left;padding:5px"><?php echo $linha["descricao"] ?></td>
                             <td style="text-align: left;padding:5px"><?php echo $linha["nome"] ?></td>
+                            <td style="text-align: left;padding:5px"><?php echo $linha["descricao"] ?></td>
 
                         </tr>
 

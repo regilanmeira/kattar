@@ -89,7 +89,7 @@
 
                 <div class="col-md-12" style="text-align: left;">
 
-                    <a href="coleta_solicitacoes.php">
+                    <a href="coleta_solicitacoes_geral.php">
                         <input type="button" class="btn btn-danger" value="Voltar">
                     </a>
 

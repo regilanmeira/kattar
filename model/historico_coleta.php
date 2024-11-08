@@ -35,6 +35,9 @@ class HistoricoColeta
         $sql = "INSERT INTO historico_coleta(data_historico,id_associado,id_coleta,id_status,observacao) VALUES ('$this->data_historico','$this->id_associado','$this->id_coleta','$this->id_status','$this->observacao')";
 
         if (executarComando($sql)) {
+            //Quando uma coleta for analisada deve ser alterado o seu id_status com o novo status
+            $sql = "UPDATE coleta SET id_status = '$this->id_status' WHERE id = '$this->id_coleta'";
+            executarComando(($sql));
             return true;
         } else {
             return false;

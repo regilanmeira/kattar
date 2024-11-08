@@ -11,6 +11,11 @@
                 
                 <td style="width: 25%;"><a href="coleta_solicitar.php?"><i class="fa-regular fa-square-plus fa-2xl" style="color: #198754;"></i> </td>
                 <td style="width: 25%;"><i class="fa-solid fa-gear fa-2xl" style="color: #198754;"></i> </td>
+                <td style="width: 25%;"><a href="index.php?"><i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #198754;"></a></i>
+                    
+      
+
+                
             </tr>
         </table>
 

@@ -332,6 +332,7 @@ class Coleta
       
 
         if (executarComando($sql)) {
+            
             return true;
         } else {
             return false;

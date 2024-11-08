@@ -41,6 +41,7 @@ if ($dados != null)
    
 }
 else{
+    
     echo "<h1 class='alert alert-danger'>Não foi possível efetuar o acesso. Verifique o e-mail digitado. </h1> ";
 ?>
     <a href="../view/conta_entrar.php">
@@ -53,7 +54,7 @@ else{
 }//Termina o IF o tipo de acesso cidadao e aqui começa o tipo de acesso cooperativa
 else
 {
-
+    header("location:../view/home.php");
 }
 
 

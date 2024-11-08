@@ -72,7 +72,7 @@
                 <div class="col-md-6" style="text-align: left;">
                     <label class="label">Turno</label>
                     <select name="txtTurno" class="form-control">
-                        <option value="">Selecione</option>
+                        <option value="Não informado">Selecione</option>
                         <option value="Matutino">Matutino</option>
                         <option value="Vespertino">Vespertino</option>
                         <option value="Noturno">Noturno</option>
