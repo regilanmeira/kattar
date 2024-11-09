@@ -1,7 +1,7 @@
 <?php
 
-//Incluir o arquivo da classe usuario
-require "../model/usuario.php";
+//Incluir o arquivo da classe cooperativa
+require "../model/cooperativa.php";
 
 include "referencias.php";
 
@@ -12,7 +12,7 @@ $email = $_POST["txtEmail"];
 $senha = $_POST["txtSenha"];
 $tipoAcesso = $_POST["tipoAcesso"];
 
-if ($tipoAcesso == "cidadao")
+if ($tipoAcesso == "cooperativa")
 {
 
 $usu = new Usuario($email,"",$senha,"","","","","");

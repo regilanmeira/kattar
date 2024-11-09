@@ -17,7 +17,9 @@ $municipio = $_POST["txtMunicipio"];
 $bairro = $_POST["txtBairro"];
 $logradouro = $_POST["txtLogradouro"];
 
-$coop = new Cooperativa($cnpj, $nome, $email, $senha, $telefone, $estado, $municipio, $bairro, $logradouro);
+$hash = password_hash($senha, 1);
+
+$coop = new Cooperativa($cnpj, $nome, $email, $hash, $telefone, $estado, $municipio, $bairro, $logradouro);
 
 if ($coop->criarCooperativa()) {
     echo "<h1 class='alert alert-success'>Cooperativa criada com sucesso!</h1>";
