@@ -19,6 +19,8 @@ $logradouro = $_POST["txtLogradouro"];
 
 $hash = password_hash($senha, 1);
 
+
+
 $coop = new Cooperativa($cnpj, $nome, $email, $hash, $telefone, $estado, $municipio, $bairro, $logradouro);
 
 if ($coop->criarCooperativa()) {

@@ -205,7 +205,7 @@ class Cooperativa
     {
         $this->cnpj = $cnpj;
         $this->nome = $nome;
-        $this->email = $email;
+        $this->email = ltrim($email);
         $this->senha = $senha;
         $this->telefone = $telefone;
         $this->estado = $estado;
@@ -216,8 +216,9 @@ class Cooperativa
 
     // MÉTODOS DA CLASSE
     public function criarCooperativa(){
-        $sql = "INSERT INTO cooperativa(cnpj,nome,email,senha,telefone,estado,municipio,bairro,logradouro) VALUES ('$this->cnpj','$this->nome',' $this->email','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
+        $sql = "INSERT INTO cooperativa(cnpj,nome,email,senha,telefone,estado,municipio,bairro,logradouro) VALUES ('$this->cnpj','$this->nome','$this->email','$this->senha','$this->telefone','$this->estado','$this->municipio','$this->bairro','$this->logradouro')";
 
+       
         if (executarComando($sql)) {
             return true;
         } else {
@@ -256,5 +257,18 @@ class Cooperativa
         $tabela = retornarDados($sql);
 
         return $tabela;
+    }
+
+
+    public function buscarCooperativaPorEmail() {
+        $sql = "SELECT * FROM cooperativa WHERE email = '$this->email'";
+
+        echo $sql;
+        $tabela = retornarDados($sql);
+    
+        return $tabela;
+        
+      
+
     }
 }
