@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/11/2024 às 14:46
+-- Tempo de geração: 19/11/2024 às 20:49
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -93,13 +93,23 @@ CREATE TABLE `cooperativa` (
   `cnpj` varchar(20) NOT NULL,
   `nome` varchar(200) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `senha` varchar(30) NOT NULL,
+  `senha` varchar(100) NOT NULL,
   `telefone` varchar(14) NOT NULL,
   `estado` varchar(60) NOT NULL,
   `municipio` varchar(60) NOT NULL,
   `bairro` varchar(60) NOT NULL,
   `logradouro` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cooperativa`
+--
+
+INSERT INTO `cooperativa` (`cnpj`, `nome`, `email`, `senha`, `telefone`, `estado`, `municipio`, `bairro`, `logradouro`) VALUES
+('00.000.000/0000-25', 'COOP URUCUCA', 'coop@urucuca.com.br', '$2y$10$4/yCPoKCGvtXb/vmFRq7B.PCUoUsfgVQsXUJlm2I.MBLfSpj.ayNS', '(73) 9875-6254', 'BA', 'Uruçuca', 'Boa Vista', 'Rua A'),
+('00.000.000/0002-20', 'COOP ITACARE', 'coop@itacare.com.br', '$2y$10$uOtvzf24tNIVgG2lRl2EZe5Nvebnp0ly5z8a7xPKD3rzQWHe8YxVO', '(73) 9999-8888', 'BA', 'Ilhéus', 'Boa Vista', 'Rua A'),
+('00.000.000/0002-21', 'COOP ITABUNA', 'regilan@gmail.com', '$2y$10$ZW266D58XGr3mS20oxNB7.oTh/Y8FYQypRJkGKwb.Dy20kH/0le3S', '(73) 8823-7123', 'BA', 'Ilheus', 'Boa Vista', 'Rua A'),
+('00.000.000/0002-28', 'COOP CANAVIEIRAS', 'coop@canavieiras.com.br', '$2y$10$Lju6GFm0NxtluAZvFR1rke3EDDCghWbISKn13nzkM4gFRbLMMAZ3q', '(73) 8456-1265', 'MS', 'Canavieiras', 'Boa Vista', 'Rua A');
 
 -- --------------------------------------------------------
 
