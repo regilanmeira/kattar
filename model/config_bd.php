@@ -1,9 +1,17 @@
 <?php
 
+/*
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
 $bd = "kattar";
+*/
+
+$servidor = "localhost";
+$usuario = "regilanc_orcamento";
+$senha = "Fotografia@123";
+$bd = "regilanc_blog"; 
+ 
 
 // Criando nova conexão 
 global $conn;

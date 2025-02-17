@@ -40,7 +40,7 @@ CREATE TABLE `associado` (
 INSERT INTO `associado` (`id`, `nome`, `cnpj_cooperativa`) VALUES
 (1, 'Regilan Meira Silva', '00.000.000/0000-00'),
 (2, 'Antônio Junior', '00.000.000/0000-00'),
-(3, 'Ana Marta da Silva', '00.000.000/0000-00\n'),
+(3, 'Ana Marta da Silva', '00.000.000/0000-00'),
 (4, 'José Vicente Silva', '00.000.000/0000-00'),
 (5, 'Ricardo Silva', '00.000.000/0000-00'),
 (6, 'Rafael Senna', '00.000.000/0000-00'),
